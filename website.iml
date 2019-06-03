@@ -4,5 +4,8 @@
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.6" />
+    </facet>
   </component>
 </module>

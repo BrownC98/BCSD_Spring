@@ -6,7 +6,7 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
-    <context:component-scan base-package="controller, domain, service"/>
+    <context:component-scan base-package="article, user"/>
     
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
