@@ -1,3 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %><c:set var="path" value=""/>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -69,7 +73,7 @@ desired effect
                         <form role="form" method="post">
                             <input type="hidden" name="articleNo" value="${article.articleNo}">
                         </form>
-                        <button type="submit" class="btn btn-primary listBtn"><i class="fa fa-list"></i> 목록</button>
+                        <button type="submit" class="btn btn-primary listBtn " onclick="location.href = '/article/write'"><i class="fa fa-list"></i> 목록</button>
                         <div class="pull-right">
                             <button type="submit" class="btn btn-warning modBtn"><i class="fa fa-edit"></i> 수정</button>
                             <button type="submit" class="btn btn-warning delBtn"><i class="fa fa-trash"></i> 삭제</button>
@@ -92,7 +96,7 @@ desired effect
 <!-- ./wrapper -->
 <%@ include file="../include/plugin_js.jsp"%>
 <script>
-    $(document).read(function () {
+    $(document).ready(function () {
         var formObj = $("form[role='form']");
         console.log(formObj);
 

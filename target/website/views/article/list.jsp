@@ -1,3 +1,8 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %><c:set var="path" value=""/>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -28,6 +33,7 @@ desired effect
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
+
     <!-- Main Header -->
     <%@include file="../include/main_header.jsp"%>
     <!-- Left side column. contains the logo and sidebar -->
@@ -51,24 +57,24 @@ desired effect
             <div class="col-lg-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">List of Article</h3>
+                        <h3 class="box-title">게시글 목록</h3>
                     </div>
                     <div class="box-body">
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
-                                <th style="width: 30px;">No.</th>
-                                <th>title</th>
-                                <th style="width: 100px;">Author</th>
-                                <th style="width: 150px;">Date</th>
-                                <th style="width: 60px;">See</th>
+                                <th style="width: 30px">No.</th>
+                                <th>제목</th>
+                                <th style="width: 100px">작성자</th>
+                                <th style="width: 150px">작성시간</th>
+                                <th style="width: 60px">조회</th>
                             </tr>
                             <c:forEach items="${articles}" var="article">
                                 <tr>
                                     <td>${article.articleNo}</td>
                                     <td><a href="/article/read?articleNo=${article.articleNo}">${article.title}</a></td>
                                     <td>${article.writer}</td>
-                                    <td><fmt:formatDate value="${article.regDate}" pattern="yyyy-MM-dd a HH:mm"/></td>
+                                    <td><fmt:formatDate value="${article.regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                     <td><span class="badge bg-red">${article.viewCnt}</span></td>
                                 </tr>
                             </c:forEach>
@@ -77,7 +83,7 @@ desired effect
                     </div>
                     <div class="box-footer">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-success btn-flat" id="writeBtn">
+                            <button type="button" class="btn btn-success btn-flat" id="writeBtn" onclick="location.href = '/article/write'">
                                 <i class="fa fa-pencil"></i> 글쓰기
                             </button>
                         </div>
@@ -96,8 +102,6 @@ desired effect
     <%@include file="../include/control_sidebar.jsp"%>
 </div>
 <!-- ./wrapper -->
-
-<%@ include file="../include/plugin_js.jsp"%>
 <script>
     var result = "${msg}";
     if (result == "regSuccess") {
@@ -108,5 +112,7 @@ desired effect
         alert("게시글 삭제가 완료되었습니다.")
     }
 </script>
+<%@ include file="../include/plugin_js.jsp"%>
+
 </body>
 </html>

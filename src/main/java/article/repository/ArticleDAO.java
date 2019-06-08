@@ -16,8 +16,7 @@ public interface ArticleDAO {
             "WHERE boardId = #{articleNo}")
     public void updateArticle(ArticleVO articleVO);
 
-    @Delete("DELETE FROM board" +
-            "WHERE boardId = #{articleNo}")
+    @Delete("DELETE FROM board WHERE boardId = #{articleNo}")
     public void deleteArticle(ArticleVO articleVO);
 
     @Select("SELECT * FROM board WHERE boardId = #{articleNo}")

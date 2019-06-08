@@ -1,8 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<c:set var="path" value=""/>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %><c:set var="path" value=""/>
 <head>
 <%--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
