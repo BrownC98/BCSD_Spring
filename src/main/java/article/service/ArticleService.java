@@ -3,13 +3,15 @@ package article.service;
 import article.domain.ArticleVO;
 import article.repository.ArticleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("articleService")
 public class ArticleService {
     @Autowired
+    @Qualifier("articleDao")
     private ArticleDAO articleDAO;
 
     public void create(ArticleVO articleVO) throws Exception{
@@ -29,6 +31,8 @@ public class ArticleService {
     }
 
     public List<ArticleVO> listAll() throws Exception{
-        return articleDAO.selectAll();
+        List<ArticleVO> articleVOList = articleDAO.selectAll();
+        System.out.println(articleVOList);
+        return articleVOList;
     }
 }

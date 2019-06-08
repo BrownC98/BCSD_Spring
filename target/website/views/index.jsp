@@ -37,7 +37,7 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Page Header
+                Main page
                 <small>Optional description</small>
             </h1>
             <ol class="breadcrumb">
@@ -67,8 +67,6 @@ desired effect
 <!-- ./wrapper -->
 
 <%@ include file="include/plugin_js.jsp"%>
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+
 </body>
 </html>
