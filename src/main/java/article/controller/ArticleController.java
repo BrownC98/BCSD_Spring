@@ -30,6 +30,7 @@ public class ArticleController {
     @RequestMapping(value = "/write", method = RequestMethod.POST)
     public ModelAndView writePost(ModelAndView mv, ArticleVO articleVO,
                                   RedirectAttributes redirectAttributes) throws Exception {
+        System.out.println("articleController.writePost "+articleVO);
         articleService.create(articleVO);
         redirectAttributes.addFlashAttribute("msg", "regSuccess");
         mv.setViewName("redirect:/article/list");

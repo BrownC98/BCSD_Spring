@@ -32,7 +32,6 @@ public class ArticleService {
 
     public List<ArticleVO> listAll() throws Exception{
         List<ArticleVO> articleVOList = articleDAO.selectAll();
-        System.out.println(articleVOList);
         return articleVOList;
     }
 }
