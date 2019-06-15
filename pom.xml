@@ -71,6 +71,17 @@
       <artifactId>javax.inject</artifactId>
       <version>1</version>
     </dependency>
+    <!--비번 암호화-->
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+    </dependency>
+<!--    왠지 모르게 기본라이브러리로 잡혀있지 않았음-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>HttpSession</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

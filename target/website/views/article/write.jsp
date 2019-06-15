@@ -68,9 +68,9 @@ desired effect
                                 <textarea class="form-control" id="content" name="content" rows="30"
                                           placeholder="Type content" style="resize: none;"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="writer">author</label>
-                                <input class="form-control" id="writer" name="writer">
+                            <div class="form-group" hidden>
+                                <label for="writer">작성자</label>
+                                <input class="form-control" id="writer" name="writer" value="${login.userId}" readonly>
                             </div>
                         </div>
                         <div class="box-footer">

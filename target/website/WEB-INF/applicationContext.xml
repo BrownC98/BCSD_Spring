@@ -4,14 +4,14 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="article, user, index"/>
+<!--    jdbc.url 은 디비 서버에 값을 넘길 때 utf-8로 넣어줌 테이블의 utf-8은 테이블의 저장되는 형식을 정하는 것-->
+    <context:component-scan base-package="article, user, index, commons"/>
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/springweb?characterEncoding=utf8&amp;useUnicode=true&amp;mysqlEncoding=utf8"/>
         <property name="username" value="root"/>
         <property name="password" value="1111"/>
     </bean>
-
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
@@ -24,6 +24,10 @@
 
     <bean id="articleDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="article.repository.ArticleDAO"></property>
+        <property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+    </bean>
+    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="user.mapper.UserDAO"></property>
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
     </bean>
 

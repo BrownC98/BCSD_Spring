@@ -22,7 +22,7 @@ public interface ArticleDAO {
     @Select("SELECT * FROM article WHERE articleNo = #{articleNo}")
     public ArticleVO selectOne(ArticleVO articleVO);
 
-    @Select("SELECT * FROM article")
+    @Select("SELECT * FROM article ORDER BY articleNo DESC")
     public List<ArticleVO> selectAll();
 
 //    VO와 DB 컬럼 매핑구문 (굳이 필요한지는 모르겠음 -> mybatis 에서 자동화해주는지 모르겠음)

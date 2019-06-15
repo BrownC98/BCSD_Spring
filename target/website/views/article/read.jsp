@@ -73,11 +73,13 @@ desired effect
                         <form role="form" method="post">
                             <input type="hidden" name="articleNo" value="${article.articleNo}">
                         </form>
-                        <button type="submit" class="btn btn-primary listBtn " onclick="location.href = '/article/write'"><i class="fa fa-list"></i> 목록</button>
-                        <div class="pull-right">
-                            <button type="submit" class="btn btn-warning modBtn"><i class="fa fa-edit"></i> 수정</button>
-                            <button type="submit" class="btn btn-warning delBtn"><i class="fa fa-trash"></i> 삭제</button>
-                        </div>
+                        <button type="submit" class="btn btn-primary listBtn"><i class="fa fa-list"></i> 목록</button>
+                        <c:if test="${login.userId == article.writer}">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-warning modBtn"><i class="fa fa-edit"></i> 수정</button>
+                                <button type="submit" class="btn btn-warning delBtn"><i class="fa fa-trash"></i> 삭제</button>
+                            </div>
+                        </c:if>
                     </div>
                 </div>
             </div>

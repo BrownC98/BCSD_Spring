@@ -1,6 +1,6 @@
 -- create database springweb;
 use springweb;
-drop table article;
+
 create table article (
 	articleNo int primary key auto_increment,
     title varchar(40) not null,
